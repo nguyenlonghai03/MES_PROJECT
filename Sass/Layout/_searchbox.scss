@@ -1,0 +1,16 @@
+.search {
+    padding: 55px;
+    background: #141414;
+    .search__form {
+        background: #fff;
+        border-radius: 0;
+        input {
+            border-color: #fff;
+            outline: 0;
+            box-shadow: none;
+        }
+    }
+    @include repond-to("medium") {
+        padding: 25px 15px;
+    }
+}

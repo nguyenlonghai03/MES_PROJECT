@@ -1,0 +1,121 @@
+.footer{
+    background-color: $color-black-0;
+    color: $color-white-0;
+    .container-fluid{
+        width: 90%;
+        margin: 0 auto;
+        .footer__item{
+            @include text( $fs-0, $fw-normal,$color-gray-1);
+            margin: 0;
+            padding: 0;
+            .private__policy{
+                color: $color-white-0;
+                &:hover{
+                    text-decoration: none;
+                    color: $color-blue-1;
+                }
+            }
+            h2{
+                @include text( $fs-4, $fw-bold,$color-white-0);
+                text-transform: capitalize;
+                border-bottom: 2px solid $color-gray-1;
+                padding-bottom: $pd-4;
+            }
+            li{
+                list-style: none;
+                a{
+                    color: $color-gray-1;
+                }
+                &:hover{
+                    a{
+                        color: #00adef;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+
+        }
+        .footer__underline{
+            border-bottom: 2px solid $color-gray-1;
+        }
+        .footer__socialIcons{
+            display: flex;
+            flex-wrap: wrap;
+            li{
+                a{
+                    font-size: $fs-3 + 1;
+                    margin: 0 $mg-3;
+                }
+            } 
+        }
+        .footer__brands{
+            width: 80%;
+            margin: $mg-4 auto;
+            padding: $pd-3 + 5 $pd-1;
+            a{
+                height: 40px;
+                text-align: center;
+                img{
+                    height: 100%;
+                }
+            }
+            
+        }
+        .footer__website{
+            border-top: 2px solid $color-gray-1;
+            p{
+                @include text( $fs-0, $fw-normal, $color-gray-1);
+                padding: $pd-4 0;
+                a{
+                    color: $color-white-0;
+                    transition: .5s;
+                    &:hover{
+                        text-decoration: none;
+                        color: $color-blue-1;
+                    }
+                }
+            }
+        }
+        .footer__base{
+            display: flex;
+            justify-content: space-between;
+            .footer__language{
+                display: flex;
+                @include text($fs-0 + 2, $fw-normal,$color-blue-0);
+                p:first-child{
+                    border-right: 2px solid $color-blue-0;
+                    padding: 0 $pd-1;
+                    &:hover{
+                        color: $color-blue-1;
+                        border-right: 2px solid $color-blue-1;
+                    }
+                }
+                .active{
+                    color: $color-white-0;
+                    padding: 0 $pd-1;
+                }
+
+            }
+            .footer__base-menu{
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-right: 100px;
+                    li{
+                        list-style: none;
+                        a{
+                            @include text($fs-0, $fw-normal,$color-gray-1);
+                            padding: $pd-0 $pd-2;
+                            transition: .5s;
+                            &:hover{
+                                text-decoration: none;
+                                color: $color-blue-1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

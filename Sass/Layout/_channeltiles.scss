@@ -1,0 +1,33 @@
+.channeltiles {
+    background: #000;
+    padding: 5px 55px;
+    .channeltiles__container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 15px;
+        .channeltiles__item {
+            position: relative;
+            &::after {
+                content: '';
+                width: 100%;
+                height: 0px;
+                background: #05adef;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                opacity: 0;
+                transition: all .16s ease-in-out;
+            }
+            &:hover::after {
+                opacity: 1;
+                height: 5px;
+            }
+        }
+        @include repond-to("small"){
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+    }
+    @include repond-to("medium"){
+        padding: 5px 15px;
+    }
+}

@@ -1,0 +1,159 @@
+@include repond-to("maxmedium") {
+    .sidebar-section {
+        width: 100%;
+        background-color: $color-gray-1;
+
+        .row {
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
+
+        .sidebar {
+            position: fixed;
+            // margin-left: -15px !important;
+            // margin-right: -15px !important;
+            bottom: 0;
+            left: 0;
+            display: flex;
+            width: 100%;
+            transition: 0.5s;
+            text-align: center;
+            max-height: 80px;
+            color: $color-white-0;
+            justify-content: space-around;
+            z-index: 1000;
+            background: #000;
+            .side__item {
+                flex: 1 1 25%;
+                background: #1f1f1f;
+                margin: 0 1px;
+                padding-bottom: 5px;
+                .sidebar__content {
+                    font-size: $fs-0 - 3;
+                }
+            }
+            .side4 {
+                .sidebar__content {
+                    display: none !important;
+                    // font-size: $fs-p;
+                }
+                .sidebar-hidden__content {
+                    // font-size: $fs-p;
+                    font-size: $fs-0 - 3;
+                }
+            }
+            .sidebar__icon {
+                padding: 0;
+                padding-top: 10px;
+                margin: 0;
+                .fa {
+                    font-size: $fs-2 - 2;
+                }
+            }
+            .side1 {
+                width: 25%;
+                // background-color: $color-gray-1;
+
+                // margin-top: $mg-0;
+                // margin-left: $mg-0;
+                // margin-right: $mg-0 - 1;
+                margin-bottom: 0;
+                p {
+                    // background-color: $color-gray-1;
+                    // font-size: $fs-p;
+                }
+            }
+            .side2,
+            .side3,
+            .side4 {
+                // background-color: $color-gray-1;
+                transition: 0.5s;
+                // margin-top: $mg-0;
+                // margin-left: $mg-0 - 1;
+                // margin-right: $mg-0 - 1;
+                margin-bottom: 0;
+                // width: 25%;
+                p {
+                    // background-color: $color-gray-1;
+                    // font-size: $fs-p;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+    @include responsive__min("medium") {
+        .sidebar-section {
+            .sidebar {
+                position: fixed;
+                flex-direction: column;
+                top: 50%;
+                // right: 0;
+                left: calc(100% - 44px);
+                transform: translateY(-50%);
+                // width: 300px;
+                color: $color-white-0;
+                z-index: 1000;
+                .side1,
+                .side2,
+                .side3,
+                .side4 {
+                    display: flex;
+                    background: $color-gray-1;
+                    font-size: $fs-1 + 2;
+                    // transform: translateX(83%);
+                    margin: 1px 0;
+                    // height: 50px;
+                    align-items: center;
+                    transition: 0.5s;
+                    cursor: pointer;
+                }
+                .side__item {
+                    background: #1f1f1f;
+                    transform: translateX(0);
+                    transition: transform .5s ease-in-out;
+                    .sidebar__icon {
+                        width: 44px;
+                        height: 44px;
+                        line-height: 44px;
+                        text-align: center;
+                        .fa {
+                            font-size: $fs-2 - 2;
+                        }
+                    }
+                    .sidebar__content {
+                        // width: 0;
+                        transition: all .5s ease-in-out
+                    }
+                    &:first-child {
+                        border-radius: 3px 0 0 0;
+                    }
+                    &:last-child {
+                        border-radius: 0 0 0 3px;
+                    }
+                }
+                .side__item.active {
+                    // width: auto;
+                    transform: translateX(-195px)
+                }
+
+                .side4 {
+                    .sidebar__content {
+                        span:nth-of-type(1),
+                        span:nth-of-type(2),
+                        span:nth-of-type(3),
+                        span:nth-of-type(4) {
+                            &:hover {
+                                color: $color-blue-1;
+                            }
+                        }
+                    }
+
+                    .sidebar-hidden__content {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }

@@ -1,0 +1,35 @@
+.wellcome {
+    padding: 55px;
+    background: #000;
+    color: #fff;
+    .wellcome__main {
+        width: 50%;
+        h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .wellcome__btn {
+            padding: 5px 12px 6px 12px;
+            border-radius: 1px;
+            border: 1px solid #00adef;
+            background: #00adef;
+            &:hover {
+                border: 1px solid #0088c6;
+                background: #0088c6;
+            }
+        }
+        @include repond-to("medium") {
+            width: 100%;
+            font-size: 14px;
+            h2 {
+                font-size: 26px;
+            }
+            .wellcome__btn {
+                font-size: 14px;
+            }
+        }
+    }
+    @include repond-to("medium") {
+        padding: 80px 15px;
+    }
+}

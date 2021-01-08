@@ -1,0 +1,104 @@
+.header{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: $color-black-0;
+
+    // Top information
+    .topInfo {
+        padding-top: $pd-2;
+        position: absolute;
+        right: 20px;
+        z-index: 101;
+        /* de hover  */
+        a{
+            margin: 0 $mg-2;
+            text-decoration: none;
+            color: $color-white-0;
+            transition: .5s;
+            &:hover{
+                color: $color-blue-1;
+                i.info__icon{
+                    border: 1px solid $color-blue-1;
+                    color: $color-blue-1;
+                }
+            }
+            i.info__icon{
+                justify-content: center;
+                font-size: $fs-1 + 2;
+                border: 1px solid $color-white-0;
+                width: 20px;
+                height: 20px;
+                text-align: center;
+                line-height: 1.1;
+                color: $color-white-0;
+                transition: .5s;
+            }
+        }
+        @include repond-to("medium"){
+            padding-top: 10px;
+            a {
+                font-size: 12px;
+                margin: 0 10px;
+                i.info__icon {
+                    font-size: 12px;
+                    width: 14px;
+                    height: 14px;
+                }
+            }
+            .text-right__start{
+                margin: 0;
+                .text-right__start-hidden{
+                    display: none;
+                }
+            }
+            .text-right__middle{
+                display: none;
+            }
+            .text-right__end{
+                margin-right: 10px;
+            }
+        }
+
+    }
+    // NavBar
+    .myNavbar{
+        align-items: baseline;
+        .logo{
+            margin-left: $mg-4 + 10;
+            display: flex;
+            align-items: baseline;
+            @include repond-to("medium"){
+                margin-left: 0;
+                .logo1 {
+                    width: 44px;
+                    margin-right: 1rem;
+                }
+            }
+        }
+        #mercedes-benzNavbar{
+            li{
+                align-self: center;
+                margin: 0 $mg-1;// to fix
+                text-transform: capitalize; //to fix
+                .nav-link{
+                    color: $color-white-0;
+                    font-weight: $fw-bold;
+                    transition: .5s;
+                }
+                &:hover{
+                    .nav-link{
+                        color: $color-blue-1;
+                    }
+                }
+            }
+        }
+        @include repond-to("medium"){
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    // End of NavBAr
+}
